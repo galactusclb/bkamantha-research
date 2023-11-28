@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/main.scss";
+
+html,
+body {
+  margin: 0;
+  padding-inline: 40px;
+}
+
+* {
+  font-family: "poppins";
+}
+
+h2,
+p,
+a {
+  margin: 0;
+}

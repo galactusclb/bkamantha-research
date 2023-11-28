@@ -1,0 +1,32 @@
+@import "abstracts/color.scss";
+
+@import "components/ui/button.scss";
+
+table {
+  width: 100%;
+
+  thead {
+    th {
+      border-bottom: solid 1px rgb(226, 226, 226);
+      text-align: start;
+    }
+  }
+
+  tbody,
+  thead {
+    tr {
+      td,
+      th {
+        padding: 8px 5px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background: var(--color-slate-50);
+      }
+    }
+  }
+}

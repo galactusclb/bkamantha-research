@@ -1,0 +1,56 @@
+<div class="page-header">
+    <div class="title-wrapper">
+        <h3>Results</h3>
+        <p>Select a date</p>
+    </div>
+
+    <button>
+        Upload New Set
+    </button>
+</div>
+
+<div class="dates">
+    <a *ngFor="let date of dates" [ngClass]="{'active' : selectedDate  === date}" (click)="onSelectDate(date)">{{date +
+        1}}</a>
+    <button>
+        Generate
+    </button>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2321212</td>
+            <td>2023/11/28</td>
+            <td>Captured</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2321212</td>
+            <td>2023/11/28</td>
+            <td>Captured</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2321212</td>
+            <td>2023/11/28</td>
+            <td>Captured</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2321212</td>
+            <td>2023/11/28</td>
+            <td>Captured</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

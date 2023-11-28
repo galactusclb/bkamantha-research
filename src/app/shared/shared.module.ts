@@ -1,16 +1,20 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { NavigationComponent } from "./components/navigation/navigation.component";
+import { RouterModule } from "@angular/router";
 
-const components: any[] = [];
+const components: any[] = [
+    NavigationComponent
+];
 
 @NgModule({
     declarations: components,
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        RouterModule
+    ],
     exports: [
-        ...components,
-        [
-            CommonModule
-        ]
+        ...components
     ]
 })
 export class SharedModule { }
