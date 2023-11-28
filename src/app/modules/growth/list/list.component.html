@@ -1,14 +1,17 @@
 <div class="status-wrapper">
     <div class="status">
-        <h5>Connection</h5> : <span>Not Connected</span>
-        <button>
+        <h5>Connection</h5> : <span>{{connectDeviceData.isLoading ? "Connecting" : connectDeviceData.isConnected ?
+            "Connected" : "Not Connected"}}</span>
+        <button (click)="onConnectToDevice()" [disabled]="connectDeviceData.isLoading"
+            *ngIf="!connectDeviceData.isConnected">
             Connect
         </button>
     </div>
     <div class="status">
-        <h5>Capture</h5> : <span>Idle</span>
-        <button>
-            Caputre
+        <h5>Capture</h5> : <span>{{captureData.isLoading ? "Connecting" : captureData.isCaptured ?
+            "Capturing" : "Idle"}}</span>
+        <button (click)="onCapture()" [disabled]="captureData.isLoading" *ngIf="!captureData.isCaptured">
+            Connect
         </button>
     </div>
 </div>
@@ -41,25 +44,25 @@
             <td>2321212</td>
             <td>2023/11/28</td>
             <td>Captured</td>
-            <td></td>
+            <td><a>View</a></td>
         </tr>
         <tr>
             <td>2321212</td>
             <td>2023/11/28</td>
             <td>Captured</td>
-            <td></td>
+            <td><a>View</a></td>
         </tr>
         <tr>
             <td>2321212</td>
             <td>2023/11/28</td>
             <td>Captured</td>
-            <td></td>
+            <td><a>View</a></td>
         </tr>
         <tr>
             <td>2321212</td>
             <td>2023/11/28</td>
             <td>Captured</td>
-            <td></td>
+            <td><a>View</a></td>
         </tr>
     </tbody>
 </table>
