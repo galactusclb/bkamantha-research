@@ -17,6 +17,14 @@
             <th>Area (mm^2)</th>
             <th>Perimeter (mm)</th>
             <th>Circularity</th>
+            <th>Major Axis Length (mm)</th>
+            <th>Minor Axis Length (mm)</th>
+            <th>contrast</th>
+            <th>dissimilarity</th>
+            <th>homogeneity</th>
+            <th>ASM</th>
+            <th>energy</th>
+            <th>correlation</th>
         </tr>
     </thead>
     <tbody>
@@ -26,9 +34,17 @@
             <td>{{item?.['Area (mm^2)']}}</td>
             <td>{{item?.['Perimeter (mm)']}}</td>
             <td>{{item?.Circularity}}</td>
+            <td>{{item?.['Major Axis Length (mm)']}}</td>
+            <td>{{item?.['Minor Axis Length (mm)']}}</td>
+            <td>{{item?.contrast}}</td>
+            <td>{{item?.dissimilarity}}</td>
+            <td>{{item?.homogeneity}}</td>
+            <td>{{item?.ASM}}</td>
+            <td>{{item?.energy}}</td>
+            <td>{{item?.correlation}}</td>
         </tr>
         <tr>
-            <td [colSpan]="6" style="text-align: center;">No reults to display</td>
+            <td [colSpan]="13" style="text-align: center;">No reults to display</td>
         </tr>
     </tbody>
 </table>
