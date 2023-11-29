@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ISeedingResponseData } from '@core/models/seeding';
+import { ISeeding } from '@core/models/seeding';
 import { Observable } from 'rxjs';
 
 import { environment } from "src/environments/environment"
@@ -14,7 +14,7 @@ export class SeedingService {
 
   constructor(private http: HttpClient) { }
 
-  getSeedingList(): Observable<ISeedingResponseData> {
-    return this.http.get<ISeedingResponseData>(BACKEND_URL + '/seeding/')
+  getSeedingList(): Observable<ISeeding[]> {
+    return this.http.get<ISeeding[]>(BACKEND_URL + '/seeding/')
   }
 }

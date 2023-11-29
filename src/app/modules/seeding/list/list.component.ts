@@ -32,7 +32,7 @@ export class ListComponent {
       (res) => {
         console.log(res);
 
-        this.rows = res?.result;
+        this.rows = res;
         this.isLoading = false;
       },
       (err) => {

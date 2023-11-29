@@ -13,6 +13,9 @@
         <button (click)="onCapture()" [disabled]="captureData.isLoading" *ngIf="!captureData.isCaptured">
             Connect
         </button>
+        <button (click)="cancelCapturing()" *ngIf="!captureData.isCaptured && captureData.isLoading">
+            Cancel
+        </button>
     </div>
 </div>
 

@@ -15,7 +15,7 @@ export interface ISeeding {
   nextStage: string;
 }
 
-export interface ISeedingResponseData {
-  filename: string;
-  result?: ISeeding[];
-}
+// export interface ISeedingResponseData extends ISeeding {
+//   // filename: string;
+//   // result?: ISeeding[];
+// }

@@ -5,4 +5,13 @@ button {
   cursor: pointer;
   border-radius: 6px;
   padding-inline: 15px;
+
+  &:disabled {
+    background: var(--color-primary-300);
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--color-primary-600);
+  }
 }

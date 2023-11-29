@@ -19,7 +19,8 @@ export class ListComponent {
 
   captureData = {
     isCaptured: false,
-    isLoading: false
+    isLoading: false,
+    isCanceled: false
   }
 
   constructor(private growthService: GrowthService) { }
@@ -48,7 +49,20 @@ export class ListComponent {
 
     this.growthService.capture().subscribe(
       res => {
-        this.captureData = { isCaptured: res, isLoading: false }
+        this.captureData = { isCaptured: res, isLoading: false, isCanceled: false }
+      },
+      err => {
+        console.error(err);
+
+        this.captureData.isLoading = false
+      }
+    )
+  }
+
+  cancelCapturing() {
+    this.growthService.cancelCapture().subscribe(
+      res => {
+        this.captureData = { ...this.captureData, isLoading: false, isCanceled: true }
       },
       err => {
         console.error(err);
