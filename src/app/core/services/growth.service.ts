@@ -21,4 +21,8 @@ export class GrowthService {
     return this.http.get<boolean>(BACKEND_URL + '/capture')
   }
 
+  cancelCapture(): Observable<boolean> {
+    return this.http.get<boolean>(BACKEND_URL + '/cancel')
+  }
+
 }

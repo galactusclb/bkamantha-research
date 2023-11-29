@@ -4,15 +4,12 @@
         <p>Select a date</p>
     </div>
 
-    <button>
-        Upload New Set
-    </button>
 </div>
 
 <div class="dates">
     <a *ngFor="let date of dates" [ngClass]="{'active' : selectedDate  === date}" (click)="onSelectDate(date)">{{date +
         1}}</a>
-    <button>
+    <button (click)="fetchData()">
         Generate
     </button>
 </div>
@@ -21,36 +18,49 @@
 <table>
     <thead>
         <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Action(s)</th>
+            <th>number</th>
+            <th>day1</th>
+            <th>day2</th>
+            <th>day3</th>
+            <th>day4</th>
+            <th>day5</th>
+            <th>day6</th>
+            <th>day7</th>
+            <th>day8</th>
+            <th>day9</th>
+            <th>day10</th>
+            <th>day11</th>
+            <th>day12</th>
+            <th>nextStage</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>2321212</td>
-            <td>2023/11/28</td>
-            <td>Captured</td>
-            <td></td>
+        <tr *ngIf="isLoading" style="text-align: center;">
+            <td colspan="14">Loading....</td>
         </tr>
         <tr>
-            <td>2321212</td>
-            <td>2023/11/28</td>
-            <td>Captured</td>
-            <td></td>
+            <td colspan="14" *ngIf="!isLoading && rows?.length === 0 " style="text-align: center;">
+                No date to display
+            </td>
         </tr>
-        <tr>
-            <td>2321212</td>
-            <td>2023/11/28</td>
-            <td>Captured</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>2321212</td>
-            <td>2023/11/28</td>
-            <td>Captured</td>
-            <td></td>
-        </tr>
+        <ng-container *ngIf="!isLoading">
+            <tr *ngFor="let item of rows;">
+                <td>{{item?.number}}</td>
+                <td>{{item?.day1}}</td>
+                <td>{{item?.day2}}</td>
+                <td>{{item?.day3}}</td>
+                <td>{{item?.day4}}</td>
+                <td>{{item?.day5}}</td>
+                <td>{{item?.day6}}</td>
+                <td>{{item?.day7}}</td>
+                <td>{{item?.day8}}</td>
+                <td>{{item?.day9}}</td>
+                <td>{{item?.day10}}</td>
+                <td>{{item?.day11}}</td>
+                <td>{{item?.day12}}</td>
+                <td>{{item?.nextStage}}</td>
+            <tr>
+        </ng-container>
+
     </tbody>
 </table>
